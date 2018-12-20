@@ -4,7 +4,7 @@ class UIPositions(object):
     LEAVEEND = (110, 1035)
     LEAVEEXP = (155, 1010)
     REJOIN = (860, 622)
-    SELECTION = (1000, 600)
+    SELECTION = (950, 550)
     SORTLVLUP = (1333, 160)
     FIRSTHERO = (349, 258)
 

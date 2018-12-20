@@ -26,6 +26,15 @@ class DefaultGameState(GameState):
 def do_at_start_menu():
     x, y = hoscon.pos.SELECTION
     utils.left_click(x, y)
+    time.sleep(0.5)
+    while startmenu.is_current_state():
+        y += 50
+        if y > 1000:
+            print('Cannnot get into selection, start directly.')
+            x, y = hoscon.pos.START
+            utils.left_click(x, y)
+        utils.left_click(x, y)
+        time.sleep(0.5)
 
 startmenu = GameState(name='Start Menu',
                       identifiers=hoscon.states.STARTMENU,
@@ -41,7 +50,7 @@ def do_at_selection_menu():
     time.sleep(0.5)
     x, y = hoscon.pos.START
     utils.left_click(x, y)
-    time.sleep(2)
+    time.sleep(10)
 
 selectionmenu = GameState(name='Selection Menu',
                           identifiers=hoscon.states.SELECTIONMENU,
