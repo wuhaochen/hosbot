@@ -86,4 +86,5 @@ get_attack_pos = CycledPos(30)
 
 
 def is_keydown(vkcode):
-    return bool(win32api.GetKeyState(vkcode))
+    # https://stackoverflow.com/questions/6331868/using-getkeystate
+    return win32api.GetKeyState(vkcode) < 0
