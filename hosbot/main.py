@@ -1,3 +1,6 @@
+import sys
+import time
+
 import bot
 import state
 
@@ -15,4 +18,9 @@ def main():
     print('Exit!')
 
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        wait = int(sys.argv[1])
+        print("Delay {}s.".format(wait))
+        time.sleep(wait)
+    print('Start execution.')
     main()
